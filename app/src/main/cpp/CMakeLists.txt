@@ -9,7 +9,7 @@ set(OpenCV_STATIC ON)
 set(OpenCV_DIR $ENV{OPENCV_ANDROID}/sdk/native/jni)
 find_package(OpenCV REQUIRED)
 # Declares and names the project.
-
+include_directories(~/Downloads/opencv-4.5.5-android-sdk/OpenCV-android-sdk/sdk/native/jni/include)
 project("appv2")
 
 # Creates and names a library, sets it as either STATIC
@@ -25,6 +25,7 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         runtime/main.cpp
+        timewarp_gl/plugin.cpp
         native-lib.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a
@@ -43,6 +44,7 @@ find_library( # Sets the name of the path variable.
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
+find_library(jnigraphics-lib jnigraphics)
 
 target_link_libraries( # Specifies the target library.
         appv2

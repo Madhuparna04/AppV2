@@ -4,7 +4,6 @@
 #include <chrono>
 #include <memory>
 #include <boost/optional.hpp>
-
 #include <opencv2/core/mat.hpp>
 #undef Success // For 'Success' conflict
 #include <eigen3/Eigen/Dense>
